@@ -1,1 +1,391 @@
 # DartDrinking
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .tile {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      display: inline-block;
+      position: relative;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .tile-inner {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      position: absolute;
+    }
+
+    .tile-front, .tile-back {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      color: white;
+    }
+
+    .tile-front {
+      background-color: black;
+    }
+
+    .tile-back {
+      background-color: red;
+      transform: rotateY(180deg);
+    }
+
+    .tile.clicked .tile-inner {
+      transform: rotateY(180deg);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var tiles = document.querySelectorAll('.tile');
+      var currentTile = null;
+
+      tiles.forEach(function(tile) {
+        tile.addEventListener('click', function() {
+          if (this.classList.contains('clicked')) {
+            this.classList.remove('clicked');
+          } else {
+            if (currentTile) {
+              currentTile.classList.remove('clicked');
+            }
+            this.classList.add('clicked');
+            currentTile = this;
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="container">
+    <!-- Erste Spalte -->
+  
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Double</div>
+        <div class="tile-back">2 Shots verteilen</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Triple</div>
+        <div class="tile-back">3 Shots verteilen</div>
+      </div>
+    </div>
+
+  
+ <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 1</div>
+        <div class="tile-back">Wortverbot (alle)</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 2</div>
+        <div class="tile-back">Schlampe trinkt</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 3</div>
+        <div class="tile-back">Trinkbuddy Exit</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 4</div>
+        <div class="tile-back">Kleinster trinkt</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 5</div>
+        <div class="tile-back">Wortverbot fuer Werfer</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 6</div>
+        <div class="tile-back">Krimineller trinkt (Tattoo)</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 7</div>
+        <div class="tile-back">Engel trinkt</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 8</div>
+        <div class="tile-back">N-Z</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 9</div>
+        <div class="tile-back">Groesster trinkt</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 10</div>
+        <div class="tile-back">A-M</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 11</div>
+        <div class="tile-back">Reinhaeuter trinken</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 12</div>
+        <div class="tile-back">Deutsche trinken</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 13</div>
+        <div class="tile-back">-neue Regel-</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 14</div>
+        <div class="tile-back">-neue Regel-</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 15</div>
+        <div class="tile-back">Wo das erste Mal?</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 16</div>
+        <div class="tile-back">Auslaender trinken</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 17</div>
+        <div class="tile-back">Automarken nennen im Kreis</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 18</div>
+        <div class="tile-back">lieblings Sexstellung</div>
+      </div>
+    </div>  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 19</div>
+        <div class="tile-back">Biermarken nennen im Kreis</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Aussen 20</div>
+        <div class="tile-back">Trinkbuddy Exit</div>
+      </div>
+    </div>
+
+
+ <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 1</div>
+        <div class="tile-back">schwache Hand Wurf</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 2</div>
+        <div class="tile-back">Rennfahrer</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 3</div>
+        <div class="tile-back">Trinkbuddy</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 4</div>
+        <div class="tile-back">Boys trinken</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 5</div>
+        <div class="tile-back">blind Dart</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 6</div>
+        <div class="tile-back">One Piece Strip</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 7</div>
+        <div class="tile-back">Rentnerfahrer</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 8</div>
+        <div class="tile-back">letzter B-Day</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 9</div>
+        <div class="tile-back">Girls trinken</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 10</div>
+        <div class="tile-back">naechster B-Day</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 11</div>
+        <div class="tile-back">Kleidungs-stueck Tausch</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 12</div>
+        <div class="tile-back">Wahrheit</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 13</div>
+        <div class="tile-back">Jungspund</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 14</div>
+        <div class="tile-back">Rentner</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 15</div>
+        <div class="tile-back">???</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 16</div>
+        <div class="tile-back">Pflicht</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 17</div>
+        <div class="tile-back">Gering-verdiener</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 18</div>
+        <div class="tile-back">Singles trinken</div>
+      </div>
+    </div>  
+
+<div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 19</div>
+        <div class="tile-back">Gross-verdiener</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Innen 20</div>
+        <div class="tile-back">Trinkbuddy</div>
+      </div>
+    </div>
+
+<div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Outer Bull 25</div>
+        <div class="tile-back">Oper (einer auf Ex)</div>
+      </div>
+    </div>
+
+  <div class="tile">
+      <div class="tile-inner">
+        <div class="tile-front">Bullseye 50</div>
+        <div class="tile-back">Alle anderen auf Ex</div>
+      </div>
+    </div>
+  
+  </div>
+</body>
+</html>
